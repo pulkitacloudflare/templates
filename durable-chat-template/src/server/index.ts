@@ -80,6 +80,7 @@ export class Chat extends Server<Env> {
 export default {
   async fetch(request, env) {
     return (
+      console.log('Hello World Worker received a request');
       (await routePartykitRequest(request, { ...env })) ||
       env.ASSETS.fetch(request)
     );
